@@ -55,7 +55,6 @@ ATX2AT Firmware 1.12
 #include <EEPROM.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-#include <SmoothADC.h>
 
 #define REV_STR "ATX2AT CONVERTER 1.12"
 
