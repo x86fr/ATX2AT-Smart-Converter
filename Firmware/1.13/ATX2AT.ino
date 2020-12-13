@@ -138,7 +138,7 @@ Adafruit_SSD1306 display(128, 64, &Wire, OLED_RESET);
 // If you change this, remember to reset the EEPROM to have the new value written in EEPROM.
 float Settings_5V[] = { 4.00, 1.00, 2.25, 3.25, 4.75, 5.50, 6.75, 8.00 };
 float Settings_12V[] = { 0.50, 1.50, 3.00, 4.75 };
-byte Default_EEPROM[] = { 0xAD, 0x01, 0x0C, 0x0F, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80 };
+byte Default_EEPROM[] = { 0xAD, 0x01, 0x0D, 0x0F, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80 };
 
 // The big "ALERT" Bitmap displayed when overcurrent is detected
 const PROGMEM unsigned char OC [] = {
