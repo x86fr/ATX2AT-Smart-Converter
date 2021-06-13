@@ -1,0 +1,15 @@
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\ATX2AT Configuration Tool.exe.config
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\ATX2AT Configuration Tool.exe
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\ATX2AT Configuration Tool.pdb
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT Configuration Tool.csprojAssemblyReference.cache
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT_Configuration_Tool.Main.resources
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT_Configuration_Tool.Properties.Resources.resources
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT Configuration Tool.csproj.GenerateResource.cache
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT Configuration Tool.exe
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT Configuration Tool.pdb
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT Configuration Tool.csproj.CoreCompileInputs.cache
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\tools\avrdude.exe
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\tools\libusb0.dll
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\tools\avrdude.conf
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Release\ATX2AT_Configuration_Tool.FW_Upd.resources
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Release\tools\ucafw121.hex

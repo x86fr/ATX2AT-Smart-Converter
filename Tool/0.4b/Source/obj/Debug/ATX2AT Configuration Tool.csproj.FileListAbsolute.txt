@@ -1,0 +1,9 @@
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Debug\ATX2AT Configuration Tool.exe.config
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Debug\ATX2AT Configuration Tool.exe
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\bin\Debug\ATX2AT Configuration Tool.pdb
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Debug\ATX2AT Configuration Tool.csprojAssemblyReference.cache
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Debug\ATX2AT_Configuration_Tool.Properties.Resources.resources
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Debug\ATX2AT Configuration Tool.csproj.GenerateResource.cache
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Debug\ATX2AT Configuration Tool.exe
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Debug\ATX2AT Configuration Tool.pdb
+D:\Dev\ATX2AT\Conf Tool\ATX2AT Configuration Tool\ATX2AT Configuration Tool\obj\Debug\ATX2AT_Configuration_Tool.Main.resources

@@ -1,5 +1,5 @@
 /*********************************************************************
-ATX2AT Firmware 1.13
+ATX2AT Firmware 1.21
 *********************************************************************/
 
 /*  -------------
@@ -10,7 +10,8 @@ ATX2AT Firmware 1.13
  *  0x02 : FW Revision (Minor)
  *  0x03 : Screensaver Duration (minutes)
  *  0x04 : SlowBlow Delay (ms * 10)
- *  0x05-0x0B : RESERVED
+ *  0x05 : Settings (Bit[0] - 0 = ATX Pwr Btn / 1 = AT Pwr Btn)
+ *  0x06-0x0B : RESERVED
  *  0x0C : Cal Factor (5V VOLTAGE)
  *  0x0D : Cal Factor (5V CURRENT)
  *  0x0E : Cal Factor (12V VOLTAGE)
@@ -56,7 +57,10 @@ ATX2AT Firmware 1.13
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define REV_STR "ATX2AT CONVERTER 1.13"
+#define REV_STR "ATX2AT CONVERTER 1.21"
+
+#define FW_MAJ_REV 1
+#define FW_MIN_REV 21
 
 // Minimum time between actions (in milliseconds)
 #define TIMEBTACTIONS 500
@@ -116,6 +120,8 @@ bool slowblow = true;
 
 bool extpwr = false;
 
+bool isATSwitch = false;
+
 bool display_enabled = true;
 
 unsigned long lastaction;
@@ -138,7 +144,7 @@ Adafruit_SSD1306 display(128, 64, &Wire, OLED_RESET);
 // If you change this, remember to reset the EEPROM to have the new value written in EEPROM.
 float Settings_5V[] = { 4.00, 1.00, 2.25, 3.25, 4.75, 5.50, 6.75, 8.00 };
 float Settings_12V[] = { 0.50, 1.50, 3.00, 4.75 };
-byte Default_EEPROM[] = { 0xAD, 0x01, 0x0D, 0x0F, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80 };
+byte Default_EEPROM[] = { 0xAD, FW_MAJ_REV, FW_MIN_REV, 0x0F, 0x0F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x80, 0x80, 0x80 };
 
 // The big "ALERT" Bitmap displayed when overcurrent is detected
 const PROGMEM unsigned char OC [] = {
@@ -189,9 +195,14 @@ void SetE2PROM(bool reset = false)
   byte i = 0;
   byte slot = 0;
 
-  // If EEPROM not set (first run) or Reset requested, then proceed
+  if(EEPROM[2] != FW_MIN_REV) { reset = true; }
+
+  // If EEPROM not set (first run) or Reset requested or FW upgraded, then proceed
   if((EEPROM[0] != 0xAD) || reset)
   {    
+    // Increase FW write count
+    EEPROM[0x0B]++;
+
     // Set the Default Bytes at ADR 0x00-0x0F (General Settings)
     for(i = 0; i < 0x10; i++)
     {
@@ -224,6 +235,9 @@ void reinit()
 
   // Enable or Disable ScreenSaver
   ssaver_enabled = (EEPROM[3] == 0xFF) ? false : true;
+
+  // Set AT Switch Type
+  isATSwitch = (EEPROM[5] & 1) ? true : false;
 
   // Set Cal Factor
   cal5v = EEPROM[0x0C];
@@ -287,7 +301,8 @@ void loop() {
 
   int cset;
   float max_5v, max_12v;
-
+  bool pwr_btn_status, pwr_btn_timer_expired;
+  
   // -------------------------------------------
   // Set Current Limit According to DIP Switches
   // -------------------------------------------
@@ -303,29 +318,35 @@ void loop() {
   // Set Power
   // ---------
   
-  if((!digitalRead(BTN) && (millis() - lastaction) > TIMEBTACTIONS) || extpwr)  
+  pwr_btn_timer_expired = (millis() - lastaction) > TIMEBTACTIONS;
+  pwr_btn_status = !digitalRead(BTN);
+
+  if(extpwr || (pwr_btn_timer_expired && ((!isATSwitch && pwr_btn_status) || (isATSwitch && (pwr_btn_status != curpower || ocurrent5 || ocurrent12)))))
   { 
-    if(!extpwr) { curpower = !curpower; }
-    lastaction = millis();
-    ocurrent5 = false;
-    ocurrent12 = false;
-    extpwr = false;
+    // if extpwr is set, we already have curpower, so just skip.
+    if(!extpwr) { curpower = isATSwitch ? pwr_btn_status : !curpower; }
+
+    // Reset overcurrent, except if we are in AT mode and switch is ON and ocurrent triggered. In that case, stay off until AT switch has been set to OFF.
+    if(isATSwitch && pwr_btn_status && (ocurrent5 || ocurrent12)) { 
+      curpower = false;
+    } else {
+      ocurrent5 = false;
+      ocurrent12 = false;      
+    }
+
+    extpwr = false; 
     blowtimer5v = 0;  
     blowtimer12v = 0;
     if(display_enabled == false) { 
       wakeDisplay(&display);
       display_enabled = true;
     }
+    lastaction = millis();
     power_device(curpower);
   }
 
   // Forward PWROK Status from ATX PSU to AT
-  if(digitalRead(PWROK)){
-     digitalWrite(TARGET_PWRON, 1);
-  } else {
-     digitalWrite(TARGET_PWRON, 0);
-  }
- 
+  digitalWrite(TARGET_PWRON, digitalRead(PWROK));
 
   // -----------------
   // Check overcurrent
@@ -668,17 +689,11 @@ void wakeDisplay(Adafruit_SSD1306* display) {
 bool checkSum_Rcvd()
 {
   byte csum = 0x00;
-  int i = 0;
+  int i;
 
-  for(i = 0; i < SerCMD[1]-1; i++)
-  {
-    csum ^= SerCMD[i];  
-  }
+  for(i = 0; i < SerCMD[1]-1; i++) { csum ^= SerCMD[i]; }
 
-  if(csum == SerCMD[i])
-    return true;
-  else
-    return false;  
+  return csum == SerCMD[i];
 }
 
 // Reverse bit order (LSB <=> MSB). 
