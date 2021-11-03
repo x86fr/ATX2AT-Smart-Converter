@@ -1,43 +1,42 @@
-Qty,Designator,Device,Description,Type,Package,Pins
-1,U1,ATMEGA32U4-AU,"Atmel MCU, 32KByte",SMT,TQFP44,44
-1,U2,TI INA2180A2IDGKR,Dual Current Sense Amplifier (50x gain),SMT,VSSOP-8,8
-1,U3,TI REF3030AIDBZR ,Precision Shunt Voltage Reference (3.0V / 0.5% max),SMT,SOT-23-3,3
-1,U4,ON Semi MC79M05BDTG,-5V/500mA Negative Voltage Regulator (DPAK),SMT,TO-252-2,3
-2,"Q1, Q2",Vishay SI7145DP-T1-GE3,"TrenchFET MOSFET, P Channel, -20V, -60A, 2.6 mOhm",SMT,POWERPAK_SO-8,8
-1,Q3,2N7002DW-TP,"Dual N CHANNEL MOSFET, 60V, 115mA, SOT-363",SMT,SOT-363 ,6
-1,Q4,DMG6602SVT,"MOSFET N & P Trench 30V 3.4A,2.8A 2.3V @ 250uA 60 m? @ 3.1A,10V ",SMT,SOT26,6
-1,Y1,Yangxing X322516MOB4SI,16 MHz Crystal Resonator (SMD 3.2x2.5MM) / 10ppm,SMT,3.2X2.5MM,4
-1,F1,TechFuse nSMD050-24V,Resettable Fuse PPTC (>20V / 500 mA Hold Current),SMT,1206,4
-1,F2,TechFuse nSMD010,Resettable Fuse PPTC (>10V / 100 mA Hold Current),SMT,1206,4
-1,F3,OMNIFUSE 0154005,Surface Mount Fuseblock (with 5A / Very Fast Acting Fuse),SMT,Custom,2
-1,F4,OMNIFUSE 0154010,Surface Mount Fuseblock (with 10A / Very Fast Acting Fuse),SMT,Custom,2
-1,D1,B0520LW,Low-drop Schottky Barrier Diode,SMT,SOD-123,2
-1,D2,MMSZ5232BS,Zener Diode 5.6V 200mW,SMT,SOD-323,2
-1,D3,RED LED (0805),Standard 20 mA 0805 LED (5VSB LED Indicator),SMT,0805,2
-1,D4,BLUE LED (0805),Standard 20 mA 0805 BLUE (PWR_ON LED Indicator),SMT,0805,2
-3,"C1, C2, C4",100nF 16V 0603 X7R Ceramic Capacitor,"100nF 16V 0603 X7R (Decoupling cap for U1, U2, U3)",SMT,0603,2
-7,"C3, C10, C14, C15, C16, C18, C19",100nF 16V 0402 X7R Ceramic Capacitor,Decoupling cap (C19) & Input RC cap for opamp output (C10/C19),SMT,0402,2
-2,"C5, C6",AVX TAJC226K025RNJ,22uF 25V Tantalum Capacitor (-5V & -12V Rail Main Filtering cap),SMT,SMC_C,2
-1,C7,AVX TAJE107M025RNJ,100uF 16V Tantalum Capacitor (+5V Main Filtering Cap),SMT,SMC_D,2
-1,C8,AVX TAJE227K016RNJ,47uF 25V Tantalum Capacitor (+12V Main Filtering Cap),SMT,SMC_D,2
-2,"C9, C17",22uF 10V 0805 X7R Ceramic Capacitor,22uF 16V 0805 X7R Ceramic Capacitor (+5V Internal Decoupling caps),SMT,0805,2
-2,"C11, C12",18pF 0603 C0G Ceramic Capacitor,18pF 0603 C0G Ceramic Capacitor (Crystal Load Caps),SMT,0603,2
-1,C13,1uF 16V 0603 X7R Ceramic Capacitor,1uF 16V 0603 X7R Ceramic Capacitor (USB Cap),SMT,0603,2
-2,"R1, R2",820 Ohm 0402 Resistor,820 Ohm (Input RC Resistor for opamp output),SMT,0402,2
-2,"R3, R14",1K Ohm 0603 Resistor,1K Ohm 0402 Resistor (RED/Blue Led Current Limiter),SMT,0603,2
-6,"R4, R5, R6, R7, R15, R19",330 Ohm 0603 Resistor,330 Ohm (Input/Output Current limiter to 15 mA),SMT,0603,2
-1,R8,LR2512-23R010F4 ,0.01 Ohm +/- 1% 2512 Resistor (+12V Rail Shunt),SMT,2512,2
-1,R9,LR2512-23R005F4,0.005 Ohm +/- 1% 2512 Resistor (+5V Rail Shunt),SMT,2512,2
-2,"R10, R11",22 Ohm 0603 Resistor,22 Ohm 0603 Resistor (USB Data Serial Resistors),SMT,0603,2
-7,"R12, R17, R18, R20, R21, R22, R24, R25",10K Ohm 0402 Resistor,"10K Ohm 0603 Resistor (Pullup/down)
-R24 Voltage Divider for +5V / R25 for +12V",SMT,0402,2
-2,"R13, R16",2.2K Ohm 0402 Resistor,2.2K Ohm 0402 Resistor (MOSFET Gate Pull up),SMT,0402,2
-1,R23,15K Ohm 0402 Resistor,15K Ohm 0402 Resistor (Voltage Divider for +5V),SMT,0402,2
-1,R26,47K Ohm 0402 Resistor,47K Ohm 0402 Resistor (Voltage Divider for +12V),SMT,0402,2
-1,J1,Molex 39-30-1240,MINI-FIT Jr. 24-way ANGLED,THT,THT,24
-1,J2,Molex 39-30-1140,MINI-FIT Jr. 14-way ANGLED,THT,THT,14
-1,OLED,A2541HWV-4P,2.54mm FEMALE PIN Header 1x4,THT,THT,4
-1,EXTPWR,54102-T0600LF,2.54mm MALE PIN Header 1x2,THT,THT,2
-1,USB,Wurth 629105150521,Wurth Connectors USB Micro SMT Type B,THT/SMT,Custom,4+5
-1,CONFIG,DS-06RP,6-way RED DIP SWITCH,THT,THT,12
-1,POWER (S1),SKRAALE010,Standard 6x6mm Tactile SMD Pushbutton,SMT,Custom,4
+Qty,Designator,Device,Description,Type,Package,Pins,Comment
+1,U1,ATMEGA32U4-AU,"Atmel MCU, 32KByte",SMT,TQFP44,44,
+1,U2,TI INA2180A2IDGKR,Dual Current Sense Amplifier (50x gain),SMT,VSSOP-8,8,
+1,U3,TI REF3030AIDBZR ,Precision Shunt Voltage Reference (3.0V / 0.5% max),SMT,SOT-23-3,3,
+1,U4,ON Semi MC79M05BDTG,-5V/500mA Negative Voltage Regulator (DPAK),SMT,TO-252-2,3,
+2,"Q1, Q2",Vishay SI7145DP-T1-GE3,"TrenchFET MOSFET, P Channel, -20V, -60A, 2.6 mOhm",SMT,POWERPAK_SO-8,8,
+1,Q3,2N7002DW-TP,"Dual N CHANNEL MOSFET, 60V, 115mA, SOT-363",SMT,SOT-363 ,6,
+1,Q4,DMG6602SVT,"MOSFET N & P Trench 30V 3.4A,2.8A 2.3V @ 250uA 60 mΩ @ 3.1A,10V ",SMT,SOT26,6,
+1,Y1,Yangxing X322516MOB4SI,16 MHz Crystal Resonator (SMD 3.2x2.5MM) / 10ppm,SMT,3.2X2.5MM,4,
+1,F1,TechFuse nSMD050-24V,Resettable Fuse PPTC (>20V / 500 mA Hold Current),SMT,1206,4,
+1,F2,TechFuse nSMD010,Resettable Fuse PPTC (>10V / 100 mA Hold Current),SMT,1206,4,
+1,F3,Littelfuse OMNI-BLOK 154010.0,Surface Mount Fuseblock (with 10A / Very Fast Acting Fuse),SMT,Custom,2,The fuse itself is Littelfuse NANO2 0451010.MRL
+1,F4,Littelfuse OMNI-BLOK 154005.0,Surface Mount Fuseblock (with 5A / Very Fast Acting Fuse),SMT,Custom,2,The fuse itself is Littelfuse NANO2 0451005.MRL
+1,D1,B0520LW,Low-drop Schottky Barrier Diode,SMT,SOD-123,2,
+1,D2,MMSZ5232BS,Zener Diode 5.6V 200mW,SMT,SOD-323,2,
+1,D3,RED LED (0805),Standard 20 mA 0805 LED (5VSB LED Indicator),SMT,0805,2,
+1,D4,BLUE LED (0805),Standard 20 mA 0805 BLUE (PWR_ON LED Indicator),SMT,0805,2,
+3,"C1, C2, C4",100nF 16V 0603 X7R Ceramic Capacitor,"100nF 16V 0603 X7R (Decoupling cap for U1, U2, U3)",SMT,0603,2,
+7,"C3, C10, C14, C15, C16, C18, C19",100nF 16V 0402 X7R Ceramic Capacitor,Decoupling cap (C19) & Input RC cap for opamp output (C10/C19),SMT,0402,2,
+2,"C5, C6",AVX TAJC226K025RNJ,22uF 25V Tantalum Capacitor (-5V & -12V Rail Main Filtering cap),SMT,SMC_C,2,
+1,C7,AVX TAJE107M025RNJ,100uF 16V Tantalum Capacitor (+5V Main Filtering Cap),SMT,SMC_D,2,
+1,C8,AVX TAJE227K016RNJ,47uF 25V Tantalum Capacitor (+12V Main Filtering Cap),SMT,SMC_D,2,
+2,"C9, C17",22uF 10V 0805 X7R Ceramic Capacitor,22uF 16V 0805 X7R Ceramic Capacitor (+5V Internal Decoupling caps),SMT,0805,2,
+2,"C11, C12",18pF 0603 C0G Ceramic Capacitor,18pF 0603 C0G Ceramic Capacitor (Crystal Load Caps),SMT,0603,2,
+1,C13,1uF 16V 0603 X7R Ceramic Capacitor,1uF 16V 0603 X7R Ceramic Capacitor (USB Cap),SMT,0603,2,
+2,"R1, R2",820 Ohm 0402 Resistor,820 Ohm (Input RC Resistor for opamp output),SMT,0402,2,
+2,"R3, R14",1K Ohm 0603 Resistor,1K Ohm 0402 Resistor (RED/Blue Led Current Limiter),SMT,0603,2,
+6,"R4, R5, R6, R7, R15, R19",330 Ohm 0603 Resistor,330 Ohm (Input/Output Current limiter to 15 mA),SMT,0603,2,
+1,R8,LR2512-23R010F4 ,0.01 Ohm +/- 1% 2512 Resistor (+12V Rail Shunt),SMT,2512,2,
+1,R9,LR2512-23R005F4,0.005 Ohm +/- 1% 2512 Resistor (+5V Rail Shunt),SMT,2512,2,
+2,"R10, R11",22 Ohm 0603 Resistor,22 Ohm 0603 Resistor (USB Data Serial Resistors),SMT,0603,2,
+7,"R12, R17, R18, R20, R21, R22, R24, R25",10K Ohm 0402 Resistor,"10K Ohm 0603 Resistor (Pullup/down) R24 Voltage Divider for +5V / R25 for +12V",SMT,0402,2,
+2,"R13, R16",2.2K Ohm 0402 Resistor,2.2K Ohm 0402 Resistor (MOSFET Gate Pull up),SMT,0402,2,
+1,R23,15K Ohm 0402 Resistor,15K Ohm 0402 Resistor (Voltage Divider for +5V),SMT,0402,2,
+1,R26,47K Ohm 0402 Resistor,47K Ohm 0402 Resistor (Voltage Divider for +12V),SMT,0402,2,
+1,J1,Molex 39-30-1240,MINI-FIT Jr. 24-way ANGLED,THT,THT,24,
+1,J2,Molex 39-30-1140,MINI-FIT Jr. 14-way ANGLED,THT,THT,14,
+1,OLED,A2541HWV-4P,2.54mm FEMALE PIN Header 1x4,THT,THT,4,
+1,EXTPWR,54102-T0600LF,2.54mm MALE PIN Header 1x2,THT,THT,2,
+1,USB,Wurth 629105150521,Wurth Connectors USB Micro SMT Type B,THT/SMT,Custom,4+5,
+1,CONFIG,DS-06RP,6-way RED DIP SWITCH,THT,THT,12,
+1,POWER (S1),SKRAALE010,Standard 6x6mm Tactile SMD Pushbutton,SMT,Custom,4,
